@@ -1,0 +1,128 @@
+---
+title: "text_mining"
+author: "Vanda"
+date: "March 2, 2020"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+    keep_tex: yes
+fontsize: 12pt
+geometry: margin=1in
+graphics: yes
+---
+
+```{r setup, include=FALSE}
+library(rmarkdown)
+library(knitr)
+library(tinytex)
+
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = T,
+                      collapse = T,
+                      message = F,
+                      warning = F,
+                      error = F,
+                      cache = T,
+                      tidy = T,
+                      size = "footnotesize",
+                      fig.pos = "H",
+                      results = "as.is",
+                      fig.lp = "fig:",
+                      fig.align = "center",
+                      fig.path = "figures/",
+                      cache.path = "cache/example-",
+                      tidy.opts = list(width.cutoff=90),
+                      tinytex.verbose = TRUE)
+```
+
+
+# Creating corpus using the `RIsmed` package - 0.1
+### Wheat
+```{r}
+library(RISmed)
+#In order not to overload the E-utility servers, NCBI recommends that users post no more than three
+#URL requests per second and limit large jobs to either weekends or between 9:00 PM and 5:00 AM
+#Eastern time during weekdays. Failure to comply with this policy may result in an IP address being
+#blocked from accessing NCBI.
+
+# retmax=Maximum number of records to retrieve, default is 1000.
+search_query <- EUtilsSummary("Triticum aestivum", type = "esearch", db ="pubmed",  retmax=1000, mindate=1950, maxdate=2020)
+summary(search_query)
+# the total result is 32291 articles
+
+# to see the ids of our returned query
+head(QueryId(search_query))
+
+# export query into data.frame:
+wheat <- EUtilsGet(search_query, type = "efetch", db = "pubmed")
+class(wheat)
+pubmed_wheat <- data.frame("Title"=ArticleTitle(wheat),"Abstract"=AbstractText(wheat), "PMID"=PMID(wheat))
+head(pubmed_wheat)
+
+# get rid of commas, for writing it into csv
+pubmed_wheat$Abstract <- as.character(pubmed_wheat$Abstract)
+pubmed_wheat$Abstract <- gsub(",", " ", pubmed_wheat$Abstract, fixed = TRUE)
+# export csv for documentation
+write.csv(pubmed_wheat, file = "RISmed_wheat.csv", row.names = FALSE)
+```
+### Barley
+```{r}
+search_query2 <- EUtilsSummary("Hordeum vulgare", type = "esearch", db ="pubmed",  retmax=1000, mindate=1950, maxdate=2020)
+summary(search_query2)
+#the total result is 11520 articles
+
+# to see the ids of our returned query
+head(QueryId(search_query))
+
+# export query into data.frame:
+barley <- EUtilsGet(search_query2, type = "efetch", db = "pubmed")
+class(barley)
+pubmed_barley <- data.frame("Title"=ArticleTitle(barley),"Abstract"=AbstractText(barley), "PMID"=PMID(barley))
+head(pubmed_barley)
+
+# get rid of commas, for writing it into csv
+pubmed_barley$Abstract <- as.character(pubmed_barley$Abstract)
+pubmed_barley$Abstract <- gsub(",", " ", pubmed_barley$Abstract, fixed = TRUE)
+# export csv for documentation
+write.csv(pubmed_barley, file = "RISmed_barley.csv", row.names = FALSE)
+```
+Issue:
+* many titles/abstracts are nonrecognised and displayed as "NA" -> doesnt provide full result of searches!
+
+Advantage
+* easy and quick way to get corpus formatted data.frame of most article abstracts with PMIDs etc
+
+# Creating corpus using `EasyPubmed` package
+
+```{r}
+library(easyPubMed)
+my_query <- "Triticum aestivum"
+my_entrez_id <- get_pubmed_ids(my_query)
+my_abstracts_txt <- fetch_pubmed_data(my_entrez_id, format = "abstract")
+head(my_abstracts_txt)
+```
+
+
+
+
+
+
+
+
+
+# Creating corpus by downloading different filetypes from PubMed search on website - 0.2
+### Medline
+After search, choose to sent to file, format: Medline.
+```{r}
+
+```
+
+
+# Creating corpus using the `R-Entrez` package - 0.2
+### Wheat
+```{r}
+## library(rentrez)
+## wheat_table <- read.table("~/Documents/marker_genes/text_mining//pubmed_example", header = TRUE, sep = ",")
+```
+

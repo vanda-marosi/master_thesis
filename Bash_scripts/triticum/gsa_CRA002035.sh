@@ -1,0 +1,29 @@
+#!/bin/bash
+
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078059/CRR078059.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078060/CRR078060.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078061/CRR078061.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078062/CRR078062.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078063/CRR078063.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078064/CRR078064.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078065/CRR078065.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078066/CRR078066.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078067/CRR078067.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078068/CRR078068.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078069/CRR078069.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078070/CRR078070.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078071/CRR078071.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078072/CRR078072.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078073/CRR078073.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078074/CRR078074.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078075/CRR078075.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078076/CRR078076.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078077/CRR078077.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078078/CRR078078.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078079/CRR078079.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078080/CRR078080.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078081/CRR078081.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078082/CRR078082.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078083/CRR078083.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078084/CRR078084.fq.gz
+wget ftp://download.big.ac.cn/gsa/CRA002035/CRR078085/CRR078085.fq.gz
