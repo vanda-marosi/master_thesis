@@ -1,4 +1,4 @@
-#  Comparative transcriptomics of floral development in barley & wheat {style=text-align:center}
+#  Comparative transcriptomics of floral development in barley & wheat
 ***
 This is a repository for my master thesis project at LMU Munich, created with the supervision of Dr. Daniel Lang.
 
